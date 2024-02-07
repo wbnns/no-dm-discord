@@ -8,7 +8,7 @@ setup(
     description='A Discord bot that ensures DMs are always turned off in your Discord',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    url='https://github.com/wbnns/no-dm-discord',
+    url='https://github.com/wbnns/disable-dm-discord-guild',
     packages=find_packages(),
     install_requires=[
         'requests',

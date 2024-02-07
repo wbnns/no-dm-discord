@@ -3,7 +3,7 @@ from unittest.mock import patch
 from no_dm_discord.main import update_discord_status
 
 class TestUpdateDiscordStatus(unittest.TestCase):
-    @patch('no-dm-discord.main.requests.put')  # Adjust the patch target to match the import path
+    @patch('no_dm_discord.main.requests.put')
     def test_update_discord_status_success(self, mock_put):
         # Setup the mock to simulate a successful API response
         mock_put.return_value.status_code = 200
