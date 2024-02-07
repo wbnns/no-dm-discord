@@ -1,5 +1,10 @@
 import requests
 import datetime
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 def update_discord_status():
     # Calculate time 24 hours from now
@@ -12,11 +17,12 @@ def update_discord_status():
         "dms_disabled_until": formatted_time
     }
 
-    # Discord API endpoint
-    url = 'https://discord.com/api/v9/guilds/1067165013397213286/incident-actions'
+    # Access the bot token and guild ID from environment variables
+    token = os.getenv('DISCORD_BOT_TOKEN')
+    guild_id = os.getenv('DISCORD_GUILD_ID')
 
-    # Your bot token
-    token = 'MTE0Nzg5Mjg4NTczNjQwNzEzMA.GwFPcF.mrdXYd7Z8Q8MivhvUOHUrnvR2_ViKvwdq9O1DE'
+    # Discord API endpoint, now dynamically using the guild ID
+    url = f'https://discord.com/api/v9/guilds/{guild_id}/incident-actions'
 
     # Headers
     headers = {
@@ -35,4 +41,3 @@ def update_discord_status():
 
 # Call the function
 update_discord_status()
-

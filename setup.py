@@ -11,7 +11,8 @@ setup(
     url='https://github.com/wbnns/no-dm-discord',
     packages=find_packages(),
     install_requires=[
-        'requests',  # Your project's dependency
+        'requests',
+        'python-dotenv',  # Add python-dotenv to the list of required packages
     ],
     classifiers=[
         'Programming Language :: Python :: 3',
